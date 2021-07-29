@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script>
+            $(function(){
+                 $('input:first').click(function () {
+                     var check =$(this).prop('checked');
+                     $('input').prop('checked',check);
+                });
+
+
+            })
+
+        </script>
+        <style rel="stylesheet">
+            td,tr{
+              border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body onload="func()">
+
+    <table id="tab" style="border:1px solid black;" align="center" cellspacing="0px" cellpadding="0px" width="300px" height="200px" >
+
+        <tr>
+            <td><input type="checkbox" ></td>
+            <td>id</td>
+            <td>name</td>
+            <td>score</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>1001</td>
+            <td>张三</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>1002</td>
+            <td>李四</td>
+            <td>99</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>1003</td>
+            <td>王五</td>
+            <td>93</td>
+        </tr>
+
+
+    </table>
+    </body>
+</html>

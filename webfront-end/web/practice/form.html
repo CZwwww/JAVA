@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script type="text/javascript">
+            function backFun(){
+                history.back();
+            }
+
+            onload = function (ev) {
+                var elements = document.getElementsByClassName("element");
+                // alert(elements.length);
+                var pS;
+                var pSs = new Array(elements.length);
+                for (var i = 0; i < elements.length; i++) {
+                    pS = elements[i].parentElement.previousElementSibling;
+                    pSs[i] = pS.innerHTML.substr(0, pS.innerHTML.length - 1) + "不能为空";
+                }
+
+                for ( var j = 0; j < elements.length; j++) {
+                    // if (elements[j].value == "") {
+                        elements[j].onmouseout = function () {
+                                this.parentElement.nextElementSibling.firstElementChild.innerHTML=pSs[j];
+                        }
+                    // }
+                }
+
+
+
+                // var username = document.getElementById("username");
+                // if (username.value == "") {
+                //     username.onmouseout= function () {
+                //         alert("账户名不能为空")
+                //     };
+                // }
+                //
+                // var password = document.getElementById("password");
+                // if (password.value == "") {
+                //     password.onmouseout= function () {
+                //         alert("密码不能为空")
+                //     }
+                // }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <form>
+            <table>
+
+                    <tr>
+                        <td>账户:</td>
+                        <td><input class="element" type="text" name="username" id="1" ></td>
+                        <td><span></span></td>
+                    </tr>
+                    <tr>
+                        <td>密码:</td>
+                        <td><input class="element" type="password" id="2" name="password"></td>
+                    </tr>
+                    <tr>
+                        <td>确认密码:</td>
+                        <td><input class="element" type="password" id="3" name="confirmPw"></td>
+                    </tr>
+                    <tr>
+                        <td>姓名:</td>
+                        <td><input class="element" type="text" id="4" name="name"></td>
+                    </tr>
+                    <tr>
+                        <td>籍贯:</td>
+                        <td><input class="element" type="text" id="5" name="motherland"></td>
+                    </tr>
+
+            </table>
+            </form>
+        </div>
+        <input type="button" value="后退" onclick="backFun()">
+    </body>
+</html>

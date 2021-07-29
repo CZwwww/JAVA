@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script>
+            var arr = [
+                {'name':'zs',"age":11,'gender':true},
+                {'name':'ls',"age":22,'gender':true},
+                {'name':'ww',"age":13,'gender':true}
+            ];
+            var persons = {'persons':[
+                    {'name':'zs',"age":11,'gender':true},
+                    {'name':'ls',"age":22,'gender':true},
+                    {'name':'ww',"age":13,'gender':true}
+                ]};
+            for(var i=0;i<arr.length;i++){
+                for(var x in arr[i]){
+                    alert(arr[i][x]);
+                }
+            }
+            for(var i=0;i<persons.persons.length;i++){
+                for(var x in persons.persons[i]){
+                    alert(persons.persons[i][x]);
+                }
+            }
+        </script>
+    </head>
+    <body>
+    
+    </body>
+</html>

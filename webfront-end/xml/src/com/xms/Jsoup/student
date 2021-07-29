@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<students>
+    <student number="no1">
+        <name id="s1">张三</name>
+        <age>18</age>
+        <address>苏州</address>
+    </student>
+
+    <student number="no2">
+        <name>李四</name>
+        <age>18</age>
+        <gender>男</gender>
+    </student>
+</students>

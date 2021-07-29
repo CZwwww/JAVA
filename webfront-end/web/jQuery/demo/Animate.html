@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <style>
+          div{
+              width: 400px;
+              height: 400px;
+          }
+            img{
+                width: 70%;
+                height: 70%;
+            }
+
+        </style>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script>
+            $(function () {
+                $('button').first().click(function () {
+                    $('img').hide(3000);
+                });
+                $('button').first().next().click(function () {
+                    $('img').show(3000);
+                });
+                $('button').first().next().next().click(function () {
+                    $('img').toggle(3000);
+                });
+                $('button').first().next().next().next().click(function () {
+                    $('img').fadeIn(3000);
+                });
+                $('button').first().next().next().next().next().click(function () {
+                    $('img').fadeOut(3000);
+                });
+                $('button').first().next().next().next().next().next().click(function () {
+                    $('img').fadeToggle(3000);
+                });
+                $('button').first().next().next().next().next().next().next().click(function () {
+                    $('img').fadeTo(3000,0.5);
+                });
+
+            })
+        </script>
+    </head>
+    <body>
+        <div>
+            <img src="../img/view1.jpg"><br/>
+            <button type="button">隐藏</button>
+            <button type="button">显示</button>
+            <button type="button">显示/隐藏</button>
+            <button type="button">淡入</button>
+            <button type="button">淡出</button>
+            <button type="button">淡入/淡出</button>
+            <button type="button">设置透明度</button>
+<!--            <button type="button"></button>-->
+        </div>
+    </body>
+</html>

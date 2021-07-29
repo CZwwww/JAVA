@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script>
+        $(function () {
+            $('div').outerWidth('200px').outerHeight('200px').css({'border':'1px solid red'});
+            $("#5").click(function () {
+                $("div").eq(2).css({'background-color':'red'});
+            });
+            $("#6").click(function () {
+                $('div').first().css('background-color','aqua');
+            });
+            $("#7").click(function () {
+                $('div').filter(function () {
+                   return $(this).index()%2==0;
+                }).css('background-color','blue');
+            });
+            $('#8').click(function () {
+               $('div').filter(function () {
+                   return $(this).attr('class')=='mini';
+               }).hide();
+            })
+            $('#10').click(function () {
+                $('#one').nextUntil('#four').css('background-color','green');
+            })
+        })
+    </script>
+</head>
+<body >
+    <div id="one" class="mini"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+    <div id="five"></div>
+    <div id="six"></div>
+
+    <input type="hidden" value="100">
+    <input type="submit"> <input type="reset"> <button type="button"  title="普通按钮" >普通按钮</button>
+    <button type="button"  title="普通按钮" id="5">选择第三个div</button>
+    <button type="button"  title="普通按钮" id="6">选择第一个div</button>
+    <button type="button"  title="普通按钮" id="7">通过filter选择索引为偶数的div</button>
+    <button type="button"  title="普通按钮" id="8">选择含有mini的div</button>
+    <button type="button"  title="普通按钮" id="9">选择div中id!=one的div</button>
+    <button type="button"  title="普通按钮" id="10">判断id=four的div是否为empty</button>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script>
+            $.fn.extend({
+                check:function() {
+                    return this.attr('checked',true);
+            },
+                uncheck: function(){
+                    return this.attr('checked',false);
+                }
+            }
+            );
+            $(function () {
+                $('button:eq(0)').click(function () {
+                    $('input').check();
+                });
+                $('button:eq(1)').click(function () {
+                    $('input').uncheck();
+                });
+
+            })
+        </script>
+    </head>
+    <body>
+        唱<input type="checkbox">
+        跳<input type="checkbox">
+        rap<input type="checkbox">
+    <button type="button">全选</button>
+        <button type="button">全不选</button>
+    </body>
+</html>

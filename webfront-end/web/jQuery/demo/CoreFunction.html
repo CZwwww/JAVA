@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script>
+            $(function () {
+                // alert($);
+                //核心函数
+                // var html = $("div#d1").html();
+                // alert(html);
+                var html1 = $(document.getElementById("d1")).html();
+                alert(html1)
+                $("<p>一段话</p>").appendTo($("#d1"));
+            })
+        </script>
+    </head>
+    <body>
+        <div id="d1">div1</div>
+    </body>
+</html>

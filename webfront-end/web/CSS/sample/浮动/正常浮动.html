@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+<!--        浮动清除-->
+<!--        clear-->
+<!--            left清除左浮动-->
+<!--            right清除右浮动-->
+<!--            both清除任意浮动-->
+        <style>
+            div{
+                width:200px;
+                height: 100px;
+            }
+            #d1{border:1px solid red}
+            #d2{border:1px solid green;float:left}
+            #d3{border:1px solid blue;float: right}
+            #d2{clear:both;}/*清除该元素前的浮动*/
+        </style>
+    </head>
+    <body>
+    <div id="d1">div1</div>
+    <div id="d2">div2</div>
+    <div id="d3">div3</div>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+1.JDBC
+Java提供的一套接口,用来对数据库进行操作(获取连接) ddl dql dml tcl
+
+2.数据库驱动
+不同的数据库厂商针对JDBC这组接口提供的不同的实现类
+
+3.面向接口编程
+
+4.获取数据库连接
+    创建Properties
+    url=jdbc:mysql://ip:port/dbname
+    user=username
+    password=password
+    DriverClass=Driver的类路径
+
+    1)加载驱动
+    加载com.mysql.jdbc.Driver类
+    2)获取连接
+    DriverManager.getConnection(String url,String userName,String passWord)
+5.使用statement 语句
+7.ResultSetMetaData
+    rs.getMetaData()
+    getColumnName(int index)//获取表中列名
+    getColumnLabel(int index)//获取表中列别名
+8.Statement的弊端
+sql语句存在拼串操作,容易出错.
+sql注入
+不可以操作Blob数据
+不可以批量插入
+9.PreparedStatement 预编译语句
+PreparedStatement是Statement的子接口,可以解决Statement的弊端
+conn.preparedStatement()获取PrepareStatement
+表示预编译的SQL语句的对象
+boolean excute():执行更新操作,成功返回true,失败返回false
+int executeUpdate():执行"更新"操作,返回受到影响的行数
+ResultSet executeQuery();执行查询操作
+setInt(parameterIndex,value):给指定位置的占位符填充指定的值
+setString(parameterIndex,value)

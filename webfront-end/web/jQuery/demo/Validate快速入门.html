@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script src="../js/jquery.validate.js"></script>
+        <script src="../js/messages_zh.js"></script>
+        <script>
+            $(function () {
+                var password = $('#f1>input:eq(1)').val();
+                var repass = $('#f1>input:eq(2)').val();
+                $("#f1").validate({
+                    rules:{
+                        username:{
+                            required:true,
+                            maxlength:10,
+                            minlength:5
+                        },
+                        pwd:{
+                            required:true,
+                            digits:true,
+                            minlength:6
+                        },
+                        repwd:{
+                            required:true,
+                            digits:true,
+                            minlength:6,
+                            equalto:[password,repass]
+                        }
+                    },
+                    errorElement:"label",
+                    errors:{}
+                    })
+            })
+        </script>
+    </head>
+    <body>
+        <form action="#" id="f1">
+            <input type="text" name="username">
+            <input type="password" name="pwd">
+            <input type="password" name="repwd">
+            <input type="submit">
+        </form>
+    </body>
+</html>

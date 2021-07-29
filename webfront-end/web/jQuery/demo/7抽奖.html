@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script>
+            $(function () {
+                $('div').click(function () {
+                    alert('fu')
+                })
+                $("span").click(function () {
+                    alert('zi')
+                    return false;//解决event冒泡
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div>fu
+            <span>zi</span>
+        </div>
+    </body>
+</html>

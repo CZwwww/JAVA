@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script>
+            $(function () {
+               $('button').first().click(
+                   function () {
+                       $('div').first().html('<p>ahha</p>');
+                   }
+               );
+                $('button').first().next().click(
+                    function () {
+                        $('input').first().next().attr('checked',null);
+                    }
+                );
+                $('button').first().next().next().click(
+                    function () {
+                        $('input').first().next().next().removeAttr('checked')
+                    }
+                );
+            })
+        </script>
+    </head>
+    <body>
+        <div>
+            <div>haha</div>
+        </div>
+        <input type="text" value="张三">
+        <input type="checkbox" checked>球
+        <input type="checkbox" checked>板
+        <button type="button">改变第一个div内元素</button>
+        <button type="button">改变checked属性</button>
+        <button type="button">删除checked属性</button>
+        <button type="button">改变第一个div内元素</button>
+
+    </body>
+</html>

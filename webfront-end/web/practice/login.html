@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <style>
+            #login{
+                height: 960px;
+                width: 100%;
+                background-image: url("../img/login/login_bg2.jpg");
+                background-repeat: no-repeat;
+                padding-top: 335px;
+            }
+            #logo{
+                height: 120px;
+                border: 1px solid red;
+                width: 212px;
+                /*float: top;*/
+                margin-left:854px;
+                background-repeat: no-repeat;
+                background-image: url("../img/login/login_logo.png");
+            }
+            #tb{
+                /*margin-left: 720px;*/
+                border: 1px solid red;
+                height: 270px;
+                width: 480px;
+                position: absolute;
+                left: 730px;
+                top: 465px;
+            }
+
+
+            #for{
+                float: left;
+                margin-left: 720px;
+                height: 270px;
+                width: 480px;
+                background-color: white;
+                opacity: 0.2;
+
+            }
+            #tb tr,td{
+               border: 1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="login">
+            <div id="logo"></div>
+            <table id="for"></table>
+            <form action="#" method="post">
+                <table id="tb">
+                    <tr>
+                        <td></td>
+                        <td><span style="color: white;font-size: large">昵称:</span></td>
+                        <td colspan="5"><input type="text" name="username"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>密码:</td>
+                        <td colspan="5"><input type="password" name="password"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td><input type="checkbox" name="remember"><span style="color: white">下次自动登录</span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="#">忘记密码</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td colspan="5" align="center"><input type="submit" value="登录" style="width: 130px;height: 25px"></td>
+
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+
+
+        </div>
+    </body>
+</html>

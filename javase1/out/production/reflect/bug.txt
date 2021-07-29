@@ -1,0 +1,6 @@
+方法名:divide
+异常名:ArithmeticException
+异常原因:class java.lang.ArithmeticException方法名:show
+异常名:NullPointerException
+异常原因:class java.lang.NullPointerException
+一共发生了2次异常

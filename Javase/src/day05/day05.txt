@@ -1,0 +1,18 @@
+HashMap 新 速度快 线程不安全         不检查锁
+HashTable 旧(jdk1.2) 比较慢 线程安全 检查锁
+HashMap较为常用
+集合框架(Collection和Map)
+集合框架包括集合及其映射的子类
+1)List集合:元素有先后次序,元素有index位置,
+	元素可以重复,继承自Collecvtion接口,实现类
+	有ArrayList/LinkedList/Vector
+2)Set集合:元素无需,不能重复添加,是真正意义上
+数学里的集合,继承自Collection接口,实现类有
+HashSet(是一个只有key的HashMap)/TreeSet
+3)Collection:因为没有说明元素是否重复和有序,很少
+使用.
+	Collections:集合的工具类(该类中有和集合相关的方法)
+4)Map:描述了成对(key-value)放置的集合,key不能重复
+value可以重复,实现类HashMap/HashTable/TreeMap(二叉树)
+
+重点掌握:ArrayList/LinkedList/HashSet/HashMap

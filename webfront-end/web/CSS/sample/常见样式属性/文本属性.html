@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+    </head>
+    <style>
+        /*color 关键字或6位16进制数*/
+        /*text-align 文本水平对齐方式 left/right/center*/
+        /*该属性不仅适用于文本还适用于图片,需要在需要对齐的元素的父元素上设置该属性*/
+        /*text-decoration:文本装饰*/
+            /*属性值: none(常用于清除超链接的下划线)*/
+                    /*underline下划线*/
+                    /*overline 顶划线*/
+                    /*line-through 删除线*/
+        /*text_indent:文本缩进 属性值,像素值*/
+        /*text_transform:文本大小写转换*/
+        /*        capitalize*/
+        /*        uppercase*/
+        /*        lowercase*/
+        /*letter_spacing:字符间距*/
+        /*word_spacing:单词间距*/
+        /*line_height*/
+        #p1{
+            color: red;
+        }
+        #p2{
+            text-align: left;
+        }
+        #p3{
+            text-align: right;
+        }
+        #p4{
+            text-align: center;
+        }
+        #p4+div{
+            text-align: center;
+        }
+        #p5{
+            text-indent: 20px;
+        }
+        #p6{
+            text-transform: lowercase;
+        }
+        #p7{
+            text-transform: uppercase;
+        }
+        #p8{
+            text-transform:capitalize;
+        }
+        #p9{
+            letter-spacing: 20px;
+        }
+        #p10{
+            word-spacing:20px;
+        }
+        #d1{
+            width: 100%;
+            height: 60px;
+        }
+        #d1>p{
+            line-height: 60px;
+        }
+        #d1+a{
+            text-decoration:none;
+        }
+        #d2{
+            width: 100px;
+            height: 200px;
+            border: 1px solid blue;
+        }
+        #d3{
+            width: 200px;
+            height: 300px;
+            border-top: 1px solid blue;
+            border-left: 2px dashed green;
+            border-bottom: 3px groove red;
+            border-right: 4px double gray;
+        }
+    </style>
+    <body>
+        <p id="p1">设置文本颜色为红色</p>
+        <p id="p2">设置文本水平左对齐</p>
+        <p id="p3">设置文本水平右对齐</p>
+        <p id="p4">设置文本水平居中</p>
+        <div>
+            <img src="../../img/view6.jpg" width="100px" height="100px">
+        </div>
+        <p id="p5">文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例
+            文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例
+            文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例文本缩进案例</p>
+        <p id="p6">ASDjkl</p>
+        <p id="p7">asdJKL</p>
+        <p id="p8">aSDJKL</p>
+        <p id="p9">字符间距20px,java world</p>
+        <p id="p10">单词间距20px,java world</p>
+        <div id="d1"><p>设置文本垂直居中</p></div>
+        <a href="https://www.baidu.com">百度一下</a>
+        <div id="d2">设置文本水平右对齐</div><br>
+        <div id="d3">设置文本水平居中</div>
+        <p id="p15">设置文本颜色为红色</p>
+        <p id="p16">设置文本颜色为红色</p>
+    </body>
+</html>

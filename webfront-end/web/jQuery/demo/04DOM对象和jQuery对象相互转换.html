@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+        <script>
+            function press(){
+                $("#s1")[0].innerHTML = "你真丑";
+            }
+            $(function () {
+                x = $("input").toArray();//toArray方法执行后得到的是dom数组
+                $(x[0]).click(function () {//重新包装为jQuery对象
+                    $("#s1").html("萌萌哒");
+                })
+            });
+        </script>
+    </head>
+    <body >
+        <input id="btn" type="button" value="js写入数据" name="0" >
+        <input type="button" value="jq写入数据" onclick="press()"><br>
+        张三:<span id="s1">你好帅</span>
+    </body>
+</html>

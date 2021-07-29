@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script type="text/javascript">
+            var citys = [];
+            citys[0] = ["南京","苏州","无锡","南通"];
+            citys[1] = ["杭州","宁波","义乌","绍兴"];
+            citys[2] = ["青岛","烟台","济南","淄博"];
+            citys[3] = ["长沙","衡阳","岳阳","益阳"];
+            onload = function (ev) {
+
+                var s1 = document.getElementById("s1");
+                s1.onchange = function (ev1) {
+                    var s2 = document.getElementById("s2");
+                    s2.style.display = "inline";
+                    s2.options.length=1;//清空城市列表只留下第一项
+                    for (var i = 0; i < citys[s1.value - 1].length; i++) {
+                        var option = document.createElement("option");
+                        var node = document.createTextNode(citys[s1.value - 1][i]);
+                        option.appendChild(node);
+                        s2.appendChild(option);
+                    }
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <h2>籍贯</h2>
+        <select id="s1">
+            <option value="0">--请选择--</option>
+            <option value="1">江苏省</option>
+            <option value="2">浙江省</option>
+            <option value="3">山东省</option>
+            <option value="4">湖南省</option>
+        </select>
+        <select id="s2" style="display: none">
+            <option value="0">--请选择--</option>
+        </select>
+    </body>
+</html>

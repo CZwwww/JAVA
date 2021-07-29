@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script>
+            function f(obj) {
+                obj.src="../img/2.jpg";
+            }
+            function f1(obj) {
+                obj.src="../img/1.jpg"
+            }
+        </script>
+    </head>
+    <body>
+        <img src="../img/1.jpg" onmousedown="f(this)" onmouseup="f1(this)">
+    </body>
+</html>

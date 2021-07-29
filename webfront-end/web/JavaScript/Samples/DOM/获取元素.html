@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script type="text/javascript">
+            onload = function (ev) {
+                var uname = document.getElementById("uname");
+                alert(uname.value);
+                var divs = document.getElementsByTagName("div");
+                for (var i=0;i<divs.length;i++){
+                    alert(divs[i].innerHTML);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" name="username" id="uname" value="12">
+        <input type="password" name="password" id="pw">
+        <div name="d" value="12">asdas</div>
+        <div name="d" value="13"></div>
+        <div name="d" value="14"></div>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script type="text/javascript">
+
+            onload = function (ev) {
+                var p = document.createElement("option");
+                p.setAttribute("id","o2");
+                var node = document.createTextNode("苏州");
+                p.appendChild(node);
+                var div = document.getElementById("d1");
+                div.appendChild(p);
+            }
+
+
+        </script>
+    </head>
+    <body>
+        <select id="d1">
+            <option>上海</option>
+        </select>
+    </body>
+</html>

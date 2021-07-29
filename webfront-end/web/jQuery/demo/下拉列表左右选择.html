@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                    $('a').first().click(function () {
+                        var val = $('select').eq(0).val();
+                        if (val != null) {
+
+                        $('select:eq(0)>option:selected')
+                            .remove();
+                        $('select').eq(1).append("<option>" + val + "</option>");
+                    }
+                    });
+
+                    $('a').eq(3).click(function () {
+                        var val = $('select').eq(1).val();
+                        if (val != null) {
+
+                        $('select:eq(1)>option:selected')
+                            .remove();
+                        $('select').eq(0).append("<option>" + val + "</option>");
+                    }
+                    })
+
+
+                $('a').eq(1).click(function () {
+                    var val = $('select').eq(0).val();
+                    if (val != null) {
+                        $('select:eq(0)>option:selected').appendTo($("select:eq(1)"));
+                        $('select:eq(0)>option:selected').remove();
+
+                    }
+                });
+                $('a').eq(4).click(function () {
+                    var val = $('select').eq(1).val();
+                    if (val != null) {
+                        $('select:eq(1)>option:selected').appendTo($("select:eq(0)"));
+                        $('select:eq(1)>option:selected').remove();
+                    }
+                });
+
+                $('a').eq(2).click(function () {
+
+                    if ($('select:eq(0)>option').length != 0) {
+                        $('select:eq(0)>option').appendTo($("select:eq(1)"));
+                        $('select:eq(0)>option').remove();
+
+                    }
+                });
+
+                $('a').eq(5).click(function () {
+
+                    if ($('select:eq(1)>option').length != 0) {
+                        $('select:eq(1)>option').appendTo($("select:eq(0)"));
+                        $('select:eq(1)>option').remove();
+
+                    }
+                });
+            })
+        </script>
+    </head>
+    <body>
+    <table border="1px solid black">
+        <tr>
+            <td>分类</td>
+            <td><input type="text" value="手机数码"></td>
+        </tr>
+        <tr>
+            <td>分类描述</td>
+            <td>
+                <textarea rows="4" cols="20">
+                手机数码的描述信息
+            </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>分类商品</td>
+            <td>
+    `           <div style="float: left">
+                <span style="color: blue;font-family: 仿宋;display: block">全部商品</span>
+                <select multiple="multiple" size="3" style="height: 80px;width: 100px">
+                    <option>iPhone12</option>
+                    <option>小米11</option>
+                    <option>华为Mate</option>
+                </select>
+                <p><a href="#" style="text-decoration: none;padding-left: 30px">&gt;</a></p>
+                <p><a href="#" style="text-decoration: none;padding-left: 30px">&gt;&gt;</a></p>
+                <p><a href="#" style="text-decoration: none;padding-left: 30px">&gt;&gt;&gt;</a></p>
+                </div>
+
+                <div style="float: left">
+                <span style="color: blue;font-family: 仿宋;display: block">已有商品</span>
+                <select multiple="multiple" size="3" style="height: 80px;width: 100px">
+                </select>
+                <p><a href="#" style="text-decoration: none;padding-left: 30px">&lt;</a></p>
+                <p><a href="#" style="text-decoration: none;padding-left: 30px">&lt;&lt;</a></p>
+                <p><a href="#" style="text-decoration: none;padding-left: 30px">&lt;&lt;&lt;</a></p>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </body>
+</html>

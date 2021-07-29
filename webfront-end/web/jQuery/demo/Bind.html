@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Bind</title>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script>
+            $(function () {
+                $('button:eq(0)').bind(
+                    {'mouseover':function () {
+                    $('div').mouseover(function () {
+                        $('img').show();
+                    });
+                },mouseout:function () {
+                        $('div').mouseout(function () {
+                            $('img').hide();
+                        });
+                    }
+                    }
+                    );
+                $('button:eq(1)').click(function () {
+                    $('div').unbind('mouseover');
+                    alert("unbind!")
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <div style="height: 300px;width: 300px;border: 1px solid black">
+            <img src="../img/view6.jpg" style="display: none;width: 100%;height: 100%">
+        </div>
+        <button type="button">Bind</button>
+        <button type="button">Unbind</button>
+
+    </body>
+</html>

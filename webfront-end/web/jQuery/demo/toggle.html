@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("button").toggle(function(){//这个使用方式在JQuery1.8被设置为Deprecated在JQuery1.9被移除-
+                    $("div").eq(0).text('321335');},
+                function(){
+                    $("div").eq(1).text('21324312');},
+                function(){
+                    $("div").eq(2).text('23124123');}
+            );
+        });
+    </script>
+</head>
+<body>
+    <div style="width:300px;height: 300px">1</div>
+    <div style="width:300px;height: 300px">2</div>
+    <div style="width:300px;height: 300px">3</div>
+    <button type="button">click</button>
+</body>
+</html>

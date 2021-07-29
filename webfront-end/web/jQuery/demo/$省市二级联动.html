@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+            var citys = [];
+            citys[0] = ["南京","苏州","无锡","南通"];
+            citys[1] = ["杭州","宁波","义乌","绍兴"];
+            citys[2] = ["青岛","烟台","济南","淄博"];
+            citys[3] = ["长沙","衡阳","岳阳","益阳"];
+
+            $(function () {
+                // $('option').html(function (i,o) {
+                //     return i+o+"new"
+                // });
+
+                $('#s2').hide();
+                $("#s1 option").each(function (i,e) {
+                    $(this).val(i);
+                });
+
+
+               $('#s1').change(function () {
+                   var value = $(this).val()-1;
+                   $('#s2')[0].options.length=1;
+                   $.each(citys[value],function (i) {
+                       $('#s2').append("<option>" +citys[value][i]+"</option>").show();
+                   });
+               })
+            });
+        </script>
+    </head>
+    <body>
+        <h2>籍贯</h2>
+        <select id="s1">
+            <option>--请选择--</option>
+            <option>江苏省</option>
+            <option>浙江省</option>
+            <option>山东省</option>
+            <option>湖南省</option>
+        </select>
+        <select id="s2" >
+            <option value="0">--请选择--</option>
+        </select>
+    </body>
+</html>

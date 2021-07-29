@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jquery案例之抽奖</title>
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script>
+        var imgs = ['view1.jpg','view2.jpg','view3.jpg','view4.jpg','view5.jpg','view6.jpg'];
+        var pUrl = '../img/';
+        $(function () {
+            $('#stopID').attr('disabled',true);
+            var src;
+            $('img:eq(1)').hide();
+            function func() {
+                var ran = Math.floor(Math.random()*7);
+                src = pUrl+imgs[ran];
+                $('img:first').prop('src',src);
+            }
+            var interval;
+            $('#startID').click(function () {
+                $('img:eq(1)').hide();
+                 interval = setInterval(func,300);
+                $(this).attr('disabled',true);
+                $('#stopID').attr('disabled',false);
+            });
+            $('#stopID').click(function () {
+                clearInterval(interval);
+                $('img').prop('src',src).show(1000);
+                $(this).attr('disabled',true);
+                $('#startID').attr('disabled',false);
+            })
+        })
+    </script>
+</head>
+<body>
+
+<!-- 小像框 -->
+<div style="border-style:dotted;width:160px;height:100px">
+    <img id="img1ID" src="../../img/view1.jpg" style="width:160px;height:100px"/>
+</div>
+
+<!-- 大像框 -->
+<div
+        style="border-style:double;width:800px;height:500px;position:absolute;left:500px;top:10px">
+    <img id="img2ID" src="../../img/view1.jpg" width="800px" height="500px"/>
+</div>
+
+<!-- 开始按钮 -->
+<input
+        id="startID"
+        type="button"
+        value="点击开始"
+        style="width:150px;height:150px;font-size:22px"
+       >
+
+<!-- 停止按钮 -->
+<input
+        id="stopID"
+        type="button"
+        value="点击停止"
+        style="width:150px;height:150px;font-size:22px"
+       >
+
+
+</body>
+</html>

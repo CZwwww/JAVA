@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+<!--        所有元素都可以看成是一个盒子,在页面中占据一定的空间-->
+<!--        4个属性-->
+<!--        border 边框-->
+<!--        margin 外边距
+            可以简写
+            如果一个值 则代表四个边距(auto居中效果)
+            两个值代表上下
+            4个值 上右下左-->
+<!--        content 内容(元素中的内容)-->
+<!--        padding 内边距-->
+        <style>
+            #d1{
+                border: 1px solid red;
+                width: 200px;
+                height: 200px;
+                /*padding: 20px;只能扩充不能缩短,默认左边和上边有效*/
+            }
+            #d2{
+                border: 1px dashed aqua;
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="d1">
+            <div id="d2">
+
+            </div>
+
+        </div>
+
+        <div id="d3"></div>
+        <div id="d4"></div>
+    </body>
+</html>

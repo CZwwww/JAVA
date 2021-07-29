@@ -1,0 +1,10 @@
+<!DOCTYPE students [
+    <!ELEMENT students (student+)>
+    <!ELEMENT student (name,age,sex)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT age (#PCDATA)>
+        <!ELEMENT sex (#PCDATA)>
+        <!ELEMENT sex (#PCDATA)>
+        <!ELEMENT sex (#PCDATA)>
+        <!ATTLIST student number CDATA '0'>
+        ]>

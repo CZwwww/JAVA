@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+        <style>
+            #d1{
+                border: 1px solid aqua;
+                width: 100px;
+                height: 90px;
+                margin-bottom: 10px;
+            }
+            #d2{
+                border: 1px solid black;
+                width: 200px;
+                height: 50px;
+            }
+        </style>
+        <script src="../js/jquery-1.9.1.min.js"></script>
+        <script>
+            $(function () {
+                $("button").toggle(function(){
+                        $("body").css("background-color","green");},
+                    function(){
+                        $("body").css("background-color","red");},
+                    function(){
+                        $("body").css("background-color","yellow");}
+                );
+
+                $("#d1").toggle(
+                    function (ev) {$('body').append('<div>'+ev.pageX+','+ev.pageY+'</div>');},
+                    function (eve) {$('body').append('<div>'+eve.pageX+','+eve.pageY+'</div>');}
+                    );
+            });
+        </script>
+    </head>
+    <body>
+        <button type="button" id="d1">click</button>
+        <div id="d2"></div>
+        <button>请点击这里，来切换不同的背景颜色</button>
+
+    </body>
+</html>

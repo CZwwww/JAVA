@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body align="center">
+    <table align="center" width="400" height="100" border="1" cellspacing="0">
+        <caption>成绩表</caption>
+        <thead>
+            <tr bgcolor="aqua">
+                <td>姓名</td>
+                <td>语文</td>
+                <td>数学</td>
+                <td>英语</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr bgcolor="#ffc0cb">
+                <td rowspan="2">张三</td>
+
+                <td><input type="number" value="1"></td>
+                <td>100</td>
+                <td>100</td>
+            </tr>
+            <tr>
+<!--                <td>李四</td>-->
+                <td>90</td>
+                <td>150</td>
+                <td>130</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>80</td>
+                <td rowspan="2" colspan="2">140</td>
+<!--                <td>130</td>-->
+            </tr>
+            <tr>
+                <td>赵敏</td>
+                <td>90</td>
+<!--                <td>110</td>-->
+<!--                <td>140</td>-->
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>平均</td>
+                <td>90</td>
+                <td>125</td>
+                <td>125</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

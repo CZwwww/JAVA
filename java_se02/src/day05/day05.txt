@@ -1,0 +1,132 @@
+同步代码块
+synchronized(同步监视器){
+需要同步的代码段
+}
+同步监视器:
+就是一个对象,任何对象都可以,但是要保证一点,多线程看到的应该是同一个
+对象,通常情况下使用this就可以
+
+非线程安全    线程安全
+StringBuilder  StringBuffer
+ArrayLIst        Vector
+HashMap       HashTable
+HashSet        ...
+对于集合(Collection)和Map而言
+Collections 集合的工具类提供了可以将给定集合转换为线程安全集合
+的方法
+
+线程池
+java1.5之后提供了并发包concurrent
+Executors是工厂,包含工厂用于创建Executor借口的实例
+
+线程总结
+创建线程的方式
+1.继承Thread类
+	实现步骤:
+	1)继承Thread类,覆盖run()方法,提供并发运行的过程
+	2)创建这个类的实例
+	3)使用Start()方法启动线程
+2.实现Runnable接口
+	实现步骤:
+	1)实现Runnable接口,覆盖run()方法
+	2)创建这个类的实例,用这个实例作为Thread构造器的参数
+	创建Thread类实例
+	3)使用Start()方法启动线程
+	3.使用匿名内部类创建线程
+		1)Thread t = new Thread(){
+			public void run(){
+			
+			}
+		};
+		2)Runnable r = new Runnable(){
+			public void run(){
+			
+			}
+		};
+		Thread t = new Thread(r)
+	线程的状态
+	1.new			新建
+	2.Runnable   等待状态
+	3.Running    运行状态
+		a假设线程获取了CPU时间片,则进入Running状态,开始执行线程体
+		b假设系统只有一个cpu,那么在任意时间点只有一个线程处于Running
+		状态,如果是双核,那么在同一时间点会有两条线程处于Running,但是
+		当线程数大于处理器数时,依然会是多条线程在同一cpu轮换执行
+		c当一条线程开始运行的时候,如果它不是一瞬间完成,那么它不可能一直
+		处于Running状态,线程在执行的过程中会被中断,目的是为了让其他
+		线程获得执行的机会,像这样的线程调度的策略取决于底层平台,对于
+		抢占式策略的平台来说,系统会给每一个可执行的线程一小段时间来处理
+		任务,当改时间片段用完了,系统会剥夺线程所占的资源(CPU),让其他线程获得
+		运行机会
+	4.Block          阻塞(挂起)状态
+		a.以下情况会发生阻塞现象
+		 ①线程使用了sleep(),主动放弃cpu资源
+		 ②线程条用了阻塞式IO方法,在该方法返回前
+		 该线程被阻塞
+		 ③join()    object类中的wait()
+		 b.当正在执行的线程被阻塞时,其他的线程就获得了机会,
+		 阻塞结束的时候,该线程将进入Runnable状态,而非进入
+		 Running状态
+	5.Dead            死亡状态
+		 run()执行结束,该线程就进入死亡状态
+		 不要试图对一个已经死亡的线程调用start()方法,
+		 线程死亡后将不能再次作为线程执行,会抛出异常
+		 
+	程序、进程、线程三者间的关系
+	程序是由一个或多个进程组成,进程又是由一个或者多个线程组成
+	
+	线程的状态管理
+	1)Thread.sleep(long times)
+		使当前线程从Running状态放弃处理器进入Block状态,
+		休眠times毫秒,再返回Runnable状态,如果其他线程调用
+		interrupt()方法打断了当前线程的block状态,就会发生中
+		断异常InterruptedException
+	2)Thread.yield()
+		主动让出CPU,让线程让出处理器,使线程进入Runnable等
+		待状态
+	线程的常用属性和方法
+	1.线程的优先级
+		setPriority(等级1-10)默认是5
+	2.后台进程
+		setDaemon(true)
+	3.获取线程的名称
+		getName()
+	4.获取当前线程
+		Thread.currentThread()
+	5.先执行某个线程,阻塞其他线程
+		join()
+	6.sleep状态的打断和唤醒
+		Thread.sleep(times)  进入休眠(times毫秒)
+		interrupt()                打断休眠
+		被唤醒的线程会出现中断异常
+	
+	线程池
+		并发包concurrent
+		工厂Executors和接口Executor
+		工厂方法newFixedThreadPool()
+		Executor ThreadPool = 
+				Executors.newFixedThreadpool(线程数);
+				
+	Java计时器(定时器)	Timer
+	1)可以安排自动计划任务的类,每一个任务都是一个线程
+	2)创建Timer实例   new Timer()
+	3)timer.schedule(),可以为Timer实例增加计划任务
+		计划任务是一个抽象类(TimerTask)实现了Runnable接口
+	4)cancel()清除计时器对象上所有的计划任务
+	
+	Java反射机制
+	Java反射机制是指在运行当中,对于任意一个类(.class文件),
+	都能够知道这个类的所有属性和方法,对于任意一个对象,都能
+	够调用它的任意一个方法和属性,这种动态获取信息,以及动态
+	调用对象方法的功能称为反射机制
+	动态获取类中的信息,就是Java的反射机制
+	可以理解为是对类(.class文件)的一个解剖.
+	
+	类文件本身也是一个对象
+	Person.class文件也是一个对象,它的类型就是Class类型
+	Class:是一个类的描述符,用来描述类的特征:类名,属性,构造器,方法
+	
+	创建对象调用getClass()方法
+	通过类名显示Class属性
+	通过Class的静态方法forName()
+		

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+<!--        :link 未被访问的样式-->
+<!--        :visited 访问后的样式-->
+<!--        :active 激活的样式-->
+<!--        :hover 选择鼠标悬停的样式-->
+<!--        tips::link,:visited,:active一般用于超链接-->
+<!--        :hover 可以用于大部分元素-->
+<!--        默认样式:字体蓝色有下划线-->
+<!--        鼠标悬停:无样式-->
+<!--        激活样式:字体红色有下划线-->
+<!--        访问后的样式:-->
+        <style>
+            #a2:link{
+                color:green;
+            }
+            #a2:visited{
+                color:gray;
+            }
+            #a2:hover{
+                background-color: black;
+                color: white;
+                font-size:20px;
+            }
+            #a2:active{
+                color: aqua;
+            }
+            #a2+span:hover{
+                font-style: italic;
+            }
+            #i1:hover{
+                border:50px dashed aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#" target="_blank">选我打开神秘网页</a><br>
+        <a href="#" id="a2">改变超链接默认样式</a>
+        <span>有一句话不知当不当桨</span><br>
+        <img src="../../img/view6.jpg" id="i1">
+    </body>
+</html>

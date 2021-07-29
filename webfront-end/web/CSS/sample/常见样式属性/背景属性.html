@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+<!--        background-color 背景颜色-->
+<!--        background-image 设置背景图片-->
+<!--        background-repeat 设置背景图片的平铺方式-->
+<!--            repeat 默认,按照x,y放心进行平铺-->
+<!--            repeat-x按照x方向进行平铺-->
+<!--            repeat-y按照y方向进行平铺-->
+<!--            no-repeat 不平铺-->
+<!--        background-position 背景位置-->
+<!--            top left\center\right-->
+<!--            center left\center\right-->
+<!--            bottom left\center\right-->
+<!--        background-attachment 设置背景图片是否滚动-->
+<!--        scroll 背景图会随着页面其余部分的滚动而滚动-->
+<!--        fixed 当页面的其余部分滚动时,背景图不会移动.-->
+        <style>
+            #d1{
+                color: aqua;
+                background-color: black;
+            }
+            #d2{
+                width: 2560px;
+                height: 1440px;
+                background-image: url("../../img/view6.jpg");
+            }
+            #d3{
+                width: 2560px;
+                height: 1440px;
+                background-image: url("../../img/view6.jpg");
+                background-repeat: no-repeat;
+            }
+            #d4{
+                width: 2560px;
+                height: 1440px;
+                background-image: url("../../img/view6.jpg");
+                background-repeat: repeat-x;
+            }
+            #d5{
+                width: 2560px;
+                height: 1440px;
+                background-image: url("../../img/view6.jpg");
+                background-repeat: repeat-y;
+            }
+            #d6{
+                width: 2560px;
+                height: 1440px;
+                background-image: url("../../img/view6.jpg");
+                background-repeat: no-repeat;
+                background-position: center,center;
+            }
+            #d7{
+                width: 2560px;
+                height: 1440px;
+                background-image: url("../../img/view6.jpg");
+                background-repeat: repeat-x;
+                background-attachment: fixed;
+            }
+            #d8{
+                  width: 2560px;
+                  height: 1440px;
+                  background-image: url("../../img/view6.jpg");
+                  background-repeat: repeat-y;
+                  background-attachment: scroll;
+              }
+        </style>
+    </head>
+    <body>
+        <div id="d1">背景颜色为黑色</div>
+        <div id="d2">背景图片</div><br>
+        <div id="d3">背景不平铺</div><br>
+        <div id="d4">背景沿x方向平铺</div><br>
+        <div id="d5">背景沿y方向平铺</div><br>
+        <div id="d6">背景图片位置在正中间</div><br>
+        <div id="d7">背景图片不随页面滚动</div><br>
+        <div id="d8">背景图片随页面滚动</div>
+    </body>
+</html>
